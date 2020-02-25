@@ -4,7 +4,7 @@
   "description": "Coding challenge for Certsy",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./build",
+    "build": "babel ./src --out-dir ./build --ignore '**/*.test.js'",
     "start": "nodemon --exec babel-node src/index.js",
     "lint": "eslint .",
     "test": "jest",

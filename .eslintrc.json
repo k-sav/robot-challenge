@@ -2,9 +2,14 @@
     "extends": ["airbnb-base", "plugin:prettier/recommended"],
     "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": "error"
-    }  
+      "prettier/prettier": "error",
+      "no-underscore-dangle": 0,
+      "no-console": 0,
+      "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+      "no-unused-expressions": [2, { "allowTernary": true }]
+    },
     "env": {
       "jest": true
     }
+  }
 }

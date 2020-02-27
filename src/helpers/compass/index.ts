@@ -2,7 +2,7 @@ import CompassNode from './compassnode'
 
 class Compass {
     head: CompassNode | null;
-    private length: number;
+    length: number;
     private tail: CompassNode | null;
 
     constructor(values: string[]) {
@@ -10,7 +10,7 @@ class Compass {
         this.head = null
         this.tail = null
 
-        values.forEach(value => {
+        Array.from(new Set(values)).forEach(value => {
             this._push(value)
         })
     }

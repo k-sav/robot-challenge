@@ -21,6 +21,8 @@ npm run start
 
 ```sh
 npm run test
+npm run test:watch
+npm run test:coverage
 ```
 
 ## Author
@@ -112,6 +114,11 @@ We're not just looking for any old solution that would solve the problem. We're 
 
 Basically treat the coding test as if it's part of a larger problem.
 
+
+## Three Laws of Robotics
+* A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+* A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+* A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
 
 
 ***

@@ -1,10 +1,9 @@
 import Compass from './index'
 
-
 const fourBearings = ['NORTH', 'EAST', 'SOUTH', 'WEST']
 const eightBearings = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
-let my4WayCompass
-let my8WayCompass
+let my4WayCompass: Compass
+let my8WayCompass: Compass
 
 let compassNode = expect.objectContaining({
     value: expect.any(String),

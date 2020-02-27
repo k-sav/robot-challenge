@@ -1,4 +1,4 @@
-function legalMove(x, y, gridSize) {
+function legalMove(x: number, y: number, gridSize: number) {
     if (!gridSize || gridSize<=1 || !Number.isInteger(gridSize)) {
         throw new Error("Grid size should be an integer greater than 1") 
     }

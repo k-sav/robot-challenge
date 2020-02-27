@@ -73,4 +73,5 @@ vorpal
 
 vorpal
   .delimiter('🤖 $')
-  .show();
+  .show()
+  .log('Welcome to my amazing app!')

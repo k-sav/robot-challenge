@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 test('Uplaced robot throws on move, left, right, report methods', () => {
-    expect(myUnplacedRobot._placed).toBe(false)
+    expect(myUnplacedRobot.placed).toBe(false)
     expect(() => myUnplacedRobot.move()).toThrow(Error)
     expect(() => myUnplacedRobot.left()).toThrow(Error)
     expect(() => myUnplacedRobot.right()).toThrow(Error)
@@ -40,9 +40,9 @@ test('Correctly placed robot returns string with placed values', () => {
     expect(placedBotReturn).toEqual(yExpectation)
 })
 
-test('Correctly placed robot has _x _y props', () => {
-    expect(myPlacedRobot._x).toBe(x)
-    expect(myPlacedRobot._y).toBe(y)
+test('Correctly placed robot has x y props', () => {
+    expect(myPlacedRobot.x).toBe(x)
+    expect(myPlacedRobot.y).toBe(y)
 })
 
 
@@ -57,15 +57,15 @@ test('Correctly placed robot returns string with placed values', () => {
 
 test('Correctly placed robot turns', () => {
     myPlacedRobot.left()
-    expect(myPlacedRobot._bearing.value).toBe('NORTH')
+    expect(myPlacedRobot.bearing.value).toBe('NORTH')
     myPlacedRobot.right()
-    expect(myPlacedRobot._bearing.value).toBe('EAST')
+    expect(myPlacedRobot.bearing.value).toBe('EAST')
     myPlacedRobot.right()
-    expect(myPlacedRobot._bearing.value).toBe('SOUTH')
+    expect(myPlacedRobot.bearing.value).toBe('SOUTH')
     myPlacedRobot.right()
-    expect(myPlacedRobot._bearing.value).toBe('WEST')
+    expect(myPlacedRobot.bearing.value).toBe('WEST')
     const turnedBot = myPlacedRobot.right()
-    expect(myPlacedRobot._bearing.value).toBe('NORTH')
+    expect(myPlacedRobot.bearing.value).toBe('NORTH')
     expect(turnedBot).toEqual(expect.stringContaining('NORTH'))
 })
 
@@ -76,23 +76,23 @@ test('Correctly placed robot moves', () => {
     //EAST
     myPlacedRobot.left()
     myPlacedRobot.move()
-    expect(myPlacedRobot._placed).toBe(true)
-    expect(myPlacedRobot._x).toBe(x + 1)
-    expect(myPlacedRobot._y).toBe(y)
+    expect(myPlacedRobot.placed).toBe(true)
+    expect(myPlacedRobot.x).toBe(x + 1)
+    expect(myPlacedRobot.y).toBe(y)
     //NORTH
     myPlacedRobot.left()
     myPlacedRobot.move()
     myPlacedRobot.move()
-    expect(myPlacedRobot._x).toBe(x + 1)
-    expect(myPlacedRobot._y).toBe(y + 2)
+    expect(myPlacedRobot.x).toBe(x + 1)
+    expect(myPlacedRobot.y).toBe(y + 2)
     //WEST
     myPlacedRobot.left()
     myPlacedRobot.move()
-    expect(myPlacedRobot._x).toBe(x)
-    expect(myPlacedRobot._y).toBe(y + 2)
+    expect(myPlacedRobot.x).toBe(x)
+    expect(myPlacedRobot.y).toBe(y + 2)
     //SOUTH
     myPlacedRobot.left()
     myPlacedRobot.move()
-    expect(myPlacedRobot._x).toBe(x)
-    expect(myPlacedRobot._y).toBe(y + 1)
+    expect(myPlacedRobot.x).toBe(x)
+    expect(myPlacedRobot.y).toBe(y + 1)
 })

@@ -1,7 +1,11 @@
-import Node from './compassnode'
+import CompassNode from './compassnode'
 
 class Compass {
-    constructor(values) {
+    head: CompassNode | null;
+    private length: number;
+    private tail: CompassNode | null;
+
+    constructor(values: string[]) {
         this.length = 0
         this.head = null
         this.tail = null
@@ -11,7 +15,7 @@ class Compass {
         })
     }
 
-    find(value) {
+    find(value: string) {
         let node = this.head
         for (let i = 0; i < this.length; i++) {
             if (node.value === value) {
@@ -22,9 +26,9 @@ class Compass {
         return node
     }
 
-    _push(value) {
+    _push(value: string) {
         // create a new node
-        const newNode = new Node(value)
+        const newNode = new CompassNode(value)
 
         // if the list is empty,the new node should become the head and the tail
         if (!this.length) {

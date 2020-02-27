@@ -18,7 +18,7 @@ class Compass {
     find(value: string) {
         let node = this.head
         for (let i = 0; i < this.length; i++) {
-            if (node.value === value) {
+            if (node.value.toLowerCase() === value.toLowerCase()) {
                 return node
             }
             node = node.right

@@ -21,15 +21,23 @@ class Robot {
   place(xPos, yPos, bearing) {
     this.x = xPos
     this.y = yPos
-    this.bearing = myCompass.find(bearing)
+    
 
-    if (!fourBearings.includes(bearing)) {
+    if (typeof(bearing) !== 'string') {
+      throw new Error(roboLogger('placeBearing', fourBearings))
+    }
+
+    if (!fourBearings.includes(bearing.toUpperCase())) {
       throw new Error(roboLogger('placeBearing', fourBearings))
     }
 
     if (typeof xPos !== 'number' || typeof yPos !== 'number') {
       throw new Error(roboLogger('placexPosYPos'))
     }
+
+    this.bearing = myCompass.find(bearing)
+
+
 
     const validMove = legalMove(this.x, this.y, this.gridSize)
     if (validMove) {

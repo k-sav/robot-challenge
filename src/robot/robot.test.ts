@@ -28,6 +28,7 @@ describe('Unplaced robot', ()=> {
         expect(() => myUnplacedRobot.place(null, 5, 'EAST')).toThrow(Error)
         expect(() => myUnplacedRobot.place('', 5, 'EAST')).toThrow(Error)
         expect(() => myUnplacedRobot.place(undefined, 5, 'EAST')).toThrow(Error)
+        expect(() => myUnplacedRobot.place(0, 0, 0)).toThrow(Error)
     })
 })
 

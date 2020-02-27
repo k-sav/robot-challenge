@@ -11,7 +11,7 @@ vorpal
   .action(function(args, callback) {
     const {x,y,facing} = args
     try {
-      const result = myRobot.place(x, y, facing.toUpperCase())
+      const result = myRobot.place(x, y, facing)
       if (result) this.log(chalk.green(result))
     } catch (e) {
       this.log(chalk.red(e.message))
